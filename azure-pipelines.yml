@@ -13,3 +13,11 @@ resources:
 variables:
   tag: '$(Build.BuildId)'
 
+steps:
+  - 
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docker-raniproject2'
+    repository: 'reddyrani/devops'
+    command: 'buildAndPush'
+    Dockerfile: 'Dockerfile'
