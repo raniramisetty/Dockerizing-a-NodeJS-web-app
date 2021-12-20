@@ -14,7 +14,7 @@ variables:
   tag: '$(Build.BuildId)'
 
 steps:
-  - 
+
 - task: Docker@2
   inputs:
     containerRegistry: 'docker-raniproject2'
