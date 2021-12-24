@@ -1,0 +1,29 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- master
+
+pool:
+  Default
+
+resources:
+- repo: self
+
+variables:
+  tag: 'project2-$(Build.BuildId)'
+
+
+
+steps:
+  
+
+  - task: Docker@2
+    inputs:
+      containerRegistry: 'raniproject2'
+      repository: 'reddyrani/devops'
+      command: 'buildAndPush'
+      Dockerfile: 'Dockerfile'
+      tags: |
+        $(tag)     
